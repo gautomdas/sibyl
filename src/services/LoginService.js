@@ -1,5 +1,8 @@
-import { UserPasswordCredential, UserPasswordAuthProviderClient } from 'mongodb-stitch-browser-sdk';
-import { client } from './Stitch';
+import {
+  UserPasswordCredential,
+  UserPasswordAuthProviderClient
+} from "mongodb-stitch-browser-sdk";
+import { client } from "./Stitch";
 
 export const login = async (email, password) => {
   const credential = new UserPasswordCredential(email, password);
@@ -7,7 +10,9 @@ export const login = async (email, password) => {
   return client.auth.loginWithCredential(credential);
 };
 
-const emailPassClient = client.auth.getProviderClient(UserPasswordAuthProviderClient.factory);
+const emailPassClient = client.auth.getProviderClient(
+  UserPasswordAuthProviderClient.factory
+);
 
 export const register = async user => {
   return emailPassClient.registerWithEmail(user.email, user.password);

@@ -39,7 +39,7 @@ export const routes = {
     name: "Dashboard",
     url: "/dashboard",
     component: Dashboard,
-    secure: true,
+    //secure: true,
     nav: true
   },
   discover: {
@@ -53,7 +53,8 @@ export const routes = {
     name: "My Data",
     url: "/myData",
     component: MyData,
-    secure: true, nav: true
+    secure: true,
+    nav: true
   },
   dataset: {
     name: "Dataset Viewer",
@@ -100,7 +101,7 @@ export default function AppRouter(props) {
   return (
     <Router>
       <Switch>
-        <div style={{background:"green"}}>
+        <div style={{ background: "green" }}>
           {Object.keys(routes).map((key, i) => (
             <Route
               key={i}

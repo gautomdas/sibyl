@@ -1,4 +1,4 @@
-import { Button, Form, Steps, Row, Col, Radio } from "antd";
+import { Button, Form, Steps, Row, Col, Radio, Card } from "antd";
 import React from "react";
 import Redirectable from "../../components/Redirectable";
 
@@ -109,42 +109,50 @@ class SignUpPage extends React.Component {
     if (current === 0) {
       return (
         <div>
-          <h2>Are you a researcher or a hospital organization?</h2>
-          <Row gutter={8}>
-            <Col span={12}>
-              <h3>Researcher</h3>
-              <p>
-                If you are a researcher, you will have the ability to view the{" "}
-                <br />
-                data market, make inquiries, make offers, and purchase data.
-              </p>
-            </Col>
-            <Col span={12}>
-              <h3>Hospital</h3>
-              <p>
-                If you are a hospital organization, you will have to ability{" "}
-                <br style={{ lineHeight: 0.5 }} />
-                to add new datasets to the market and sell your data.
-              </p>
-            </Col>
-          </Row>
+          <br />
+          <br />
+          <Card style={{ margin: "auto", textAlign: "center" }}>
+            <h2>Are you a forecaster or company?</h2>
+            <Row gutter={8}>
+              <Col span={12}>
+                <h3>Researcher</h3>
+                <p>
+                  If you are a forecaster, you will have the ability to view the{" "}
+                  <br />
+                  questions, make forecasts, and earn money.
+                </p>
+              </Col>
+              <Col span={12}>
+                <h3>Hospital</h3>
+                <p>
+                  If you are a hospital organization, you will have to ability{" "}
+                  <br style={{ lineHeight: 0.5 }} />
+                  to add new datasets to the market and sell your data.
+                </p>
+              </Col>
+            </Row>
 
-          <Form onSubmit={this.handleSubmit} className="login-form">
-            <Form.Item>
-              {getFieldDecorator("auth_type", {
-                initialValue: "Researcher",
-                rules: [
-                  { required: true, message: "Please input your Password!" }
-                ]
-              })(
-                <Radio.Group buttonStyle="solid">
-                  <Radio.Button value="Researcher">Researcher</Radio.Button>
-                  <Radio.Button value="Hospital">Hospital</Radio.Button>
-                  {/* <Radio.Button value="Both">Both</Radio.Button> */}
-                </Radio.Group>
-              )}
-            </Form.Item>
-          </Form>
+            <Form onSubmit={this.handleSubmit} className="login-form">
+              <Form.Item>
+                {getFieldDecorator("auth_type", {
+                  initialValue: "Researcher",
+                  rules: [
+                    { required: true, message: "Please input your Password!" }
+                  ]
+                })(
+                  <Radio.Group buttonStyle="solid">
+                    <Radio.Button value="Researcher">Researcher</Radio.Button>
+                    <Radio.Button value="Hospital">Hospital</Radio.Button>
+                    {/* <Radio.Button value="Both">Both</Radio.Button> */}
+                  </Radio.Group>
+                )}
+              </Form.Item>
+            </Form>
+          </Card>
+
+          <br />
+
+          <br />
         </div>
       );
     } else if (current === 1) {
@@ -159,6 +167,7 @@ class SignUpPage extends React.Component {
     } else {
       return (
         <div>
+          <br />
           <h2>Verify Account</h2>
           <p style={{ marginBottom: "5rem" }}>
             To verify your account check your linked email account for an email
