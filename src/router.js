@@ -8,7 +8,7 @@ import React from "react";
 import SignOut from "./pages/SignOut";
 import SplashPage from "./pages/SplashPage/SplashPage.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
-import MyData from "./pages/MyData.jsx";
+import Analytics from "./pages/Analytics.jsx";
 import DatasetPage from "./pages/DatasetPage.jsx";
 import Profile from "./pages/Profile.jsx";
 import About from "./pages/About.jsx";
@@ -49,10 +49,10 @@ export const routes = {
     secure: true,
     nav: true
   },
-  myData: {
+  Analytics: {
     name: "My Data",
-    url: "/myData",
-    component: MyData,
+    url: "/analytics",
+    component: Analytics,
     secure: true,
     nav: true
   },
