@@ -1,36 +1,34 @@
-import React from 'react';
+import React ,{ useState }from 'react';
 
 import { Table, Tag } from 'antd';
 // import Preview from '../components/Preview';
 import Redirectable from './Redirectable';
 import CategoryTag from './CategoryTag';
 
+const CAN_REDIRECT=false;
 function DatasetTable({ data, redirect }) {
   const columns = [
     {
-      title: 'Hospital',
-      dataIndex: 'hospital',
-      key: 'hospital'
-    },
-    {
-      title: 'Dataset Name',
+      title: 'Title',
       dataIndex: 'name',
       key: 'name'
+    },
+    {
+      title: 'Question',
+      dataIndex: 'question',
+      key: 'question'
       // render: (text, record) => <a href={'/datasets/' + record.id}>{text}</a>
     },
     {
-      title: 'Categories',
-      dataIndex: 'categories',
-      key: 'categories',
-      render: categories => (
-        <span>
-          {categories.map(c => {
-            return <CategoryTag key={c} category={c} />;
-          })}
-        </span>
+      title: 'Status',
+      dataIndex: 'status',
+      key: 'q_status',
+      render: status => (
+            <CategoryTag key={status} category={status} />
       )
     }
   ];
+  console.log(data);
   return (
     <Table
       dataSource={data}
@@ -38,7 +36,7 @@ function DatasetTable({ data, redirect }) {
       onRow={(record, rowIndex) => {
         return {
           onClick: event => {
-            redirect('/datasets/' + record.id);
+            if(CAN_REDIRECT)redirect('/questions/' + record.id);
           }, // click row
           onDoubleClick: event => {}, // double click row
           onContextMenu: event => {}, // right button click row
