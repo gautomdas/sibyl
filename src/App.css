@@ -9,6 +9,16 @@
   pointer-events: none;
 }
 
+.layout {
+  display:flex;
+  min-height:100vh;
+  flex-flow:column;
+}
+
+main {
+  flex-grow:1;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

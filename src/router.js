@@ -2,7 +2,7 @@ import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
 import Discover from "./components/Discover.jsx";
 import LoginPage from "./pages/LoginPage/LoginPage.jsx";
-import SignUpPage from "./pages/SignUpPage/";
+import SignUpPage from "./pages/SignUpPage/SignUpPage.jsx";
 import Page from "./components/Page";
 import React from "react";
 import SignOut from "./pages/SignOut";
@@ -53,13 +53,12 @@ export const routes = {
     name: "My Data",
     url: "/myData",
     component: MyData,
-    secure: true,
-    nav: true
+    secure: true, nav: true
   },
   dataset: {
     name: "Dataset Viewer",
     url: "/datasets/:id",
-    component: DatasetPage
+    component: DatasetPage,
     secure: true
   },
   profile: {
@@ -101,7 +100,7 @@ export default function AppRouter(props) {
   return (
     <Router>
       <Switch>
-        <div>
+        <div style={{background:"green"}}>
           {Object.keys(routes).map((key, i) => (
             <Route
               key={i}
