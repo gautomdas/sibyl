@@ -2,9 +2,9 @@ import { List, Skeleton } from "antd";
 
 import Preview from "./Preview";
 import React from "react";
-import { list } from "../services/DatasetService";
+//import { list } from "../services/DatasetService";
 
-export default function DatasetList() {
+export default function DatasetList({list}) {
   return (
     <div>
       <List
